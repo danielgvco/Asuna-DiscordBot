@@ -1,0 +1,10 @@
+{
+    "en": {
+      "welcome_message": "Welcome to our server, {member}!",
+      "goodbye_message": "Goodbye {member}, we'll miss you!"
+    },
+    "es": {
+      "welcome_message": "¡Bienvenido a nuestro servidor, {member}!",
+      "goodbye_message": "Adiós {member}, ¡te extrañaremos!"
+    }
+}
