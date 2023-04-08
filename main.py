@@ -6,6 +6,11 @@ from utils import *
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
+ssl_cert_file = os.getenv('SSL_CERT_FILE')
+    
+if ssl_cert_file:
+    os.environ['SSL_CERT_FILE'] = ssl_cert_file
+
 # Initialize the Discord client
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
