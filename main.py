@@ -39,6 +39,7 @@ async def on_message(message):
 
     messages = await helper.channel_history(data)
     await message.channel.send(openai_utils.generate_chat(messages))
+    print(f"{message.channel}: {message.author}: {message.content}")
         
 
 client.run(TOKEN)

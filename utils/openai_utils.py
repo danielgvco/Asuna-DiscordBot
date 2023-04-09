@@ -37,7 +37,6 @@ def basic_moderation(message):
 def high_moderation(message):
     clean_message = message.replace("\n", " ").replace("\"", "")
     prompt = helper.get_value_from_json("resources/openai_prompts.json", "follow_rules").format(clean_message=clean_message)
-    print(prompt)
     
     response = openai.Completion.create(
         engine="text-davinci-003",
@@ -50,7 +49,6 @@ def high_moderation(message):
 
     answer = response.choices[0].text.strip().lower()
     clean_answer = answer.replace(".", "")
-    print(clean_answer)
     
     if clean_answer == "yes":
         return True
