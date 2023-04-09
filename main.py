@@ -30,12 +30,13 @@ async def on_message(message):
         }
     
     rules = helper.read_file('resources/rules.md')
-    answer = openai_utils.high_moderation(message.content, rules)
-    if not answer:
+    answer = openai_utils.basic_moderation(message.content)
+    if answer:
         await moderation.delete_message(message)
-    else:
-        messages = await helper.channel_history(data)
-        await message.channel.send(openai_utils.generate_chat(messages))
+        return
+
+    messages = await helper.channel_history(data)
+    await message.channel.send(openai_utils.generate_chat(messages))
         
 
 client.run(TOKEN)
