@@ -29,9 +29,11 @@ async def on_message(message):
         "client": client
         }
     
-    rules = helper.read_file('resources/rules.md')
-    answer = openai_utils.basic_moderation(message.content)
+    answer = openai_utils.high_moderation(message.content)
     if answer:
+        await moderation.delete_message(message)
+        return
+    elif answer == None:
         await moderation.delete_message(message)
         return
 

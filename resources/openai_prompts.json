@@ -1,4 +1,4 @@
 {
-    "follow_rules": "These are the rules:\n{rules}\nRetrun ONLY (True/False) if the user's message follows the rules or not.\n\nExamples:\n1.\ninput: Tell the number pi\noutput: True\n\n2.\ninput: Fuck You\noutput: False\n\n3.\ninput: How much is 10 multiplied by 10\noutput: True",
+    "follow_rules": "Determine if the following text is hateful, sexist, or offensive: \"{clean_message}\" respond with \"yes\" or \"no\" only.",
     "chat_prompt": "You're a friendly Discord Bot called Asuna.\nBe as useful as possible.\ntry to reply in the users own language."
 }

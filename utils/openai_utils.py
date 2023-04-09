@@ -34,22 +34,27 @@ def basic_moderation(message):
     flagged = response["results"][0]["flagged"]
     return flagged
 
-def high_moderation(message, rules):
-    system_prompt = helper.get_value_from_json("resources/openai_prompts.json", "follow_rules")
-    completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=[
-        {"role": "system", "content": system_prompt.format(rules=rules)},
-        {"role": "user", "content": f"{message}"}
-        ],
-        temperature=0,
-        max_tokens=2,
-        top_p=1.0,
-        frequency_penalty=0.0,
-        presence_penalty=0.0
+def high_moderation(message):
+    clean_message = message.replace("\n", " ").replace("\"", "")
+    prompt = helper.get_value_from_json("resources/openai_prompts.json", "follow_rules").format(clean_message=clean_message)
+    print(prompt)
+    
+    response = openai.Completion.create(
+        engine="text-davinci-003",
+        prompt=prompt,
+        max_tokens=10,
+        n=1,
+        stop=None,
+        temperature=0
     )
 
-    response = completion.choices[0].message['content']
-    clean_response = response.replace(".", "")
-    boolean_response = ast.literal_eval(clean_response)
-    return boolean_response
+    answer = response.choices[0].text.strip().lower()
+    clean_answer = answer.replace(".", "")
+    print(clean_answer)
+    
+    if clean_answer == "yes":
+        return True
+    elif clean_answer == "no":
+        return False
+    else:
+        return None
