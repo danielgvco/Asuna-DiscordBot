@@ -24,6 +24,8 @@ async def on_message(message):
     if message.author == client.user:
         return
     
+    print(f"{message.channel}: {message.author}: {message.content}")
+    
     data = {
         "message": message,
         "client": client
@@ -38,8 +40,7 @@ async def on_message(message):
         return
 
     messages = await helper.channel_history(data)
-    await message.channel.send(openai_utils.generate_chat(messages))
-    print(f"{message.channel}: {message.author}: {message.content}")
+    await message.reply(openai_utils.generate_chat(messages))
         
 
 client.run(TOKEN)

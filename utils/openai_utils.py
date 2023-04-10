@@ -20,7 +20,7 @@ def generate_text(message):
     completions = openai.Completion.create(
         model="text-davinci-003",
         prompt=message,
-        max_tokens=1500,
+        max_tokens=200,
         temperature=0
     )
     message = completions.choices[0].text
