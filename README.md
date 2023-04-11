@@ -23,10 +23,10 @@ Asuna is a powerful, intelligent, and user-friendly Discord bot that leverages t
 
 1. **Clone the repository**
 
-\```bash
+```bash
 git clone git@github.com:danielgvco/Asuna-DiscordBot.git
 cd Asuna-DiscordBot
-\```
+```
 
 2. **Install dependencies**
 
