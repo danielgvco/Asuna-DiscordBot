@@ -2,6 +2,7 @@ import os
 import discord
 from dotenv import load_dotenv
 from utils import *
+from procedures import *
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -36,11 +37,12 @@ async def on_message(message):
         await moderation.delete_message(message)
         return
     elif answer == None:
-        await moderation.delete_message(message)
+        await moderation.disappear_message(message)
         return
 
-    messages = await helper.channel_history(data)
-    await message.reply(openai_utils.generate_chat(messages))
+    #messages = await chat.chat(data)
+    #await message.reply(openai_utils.generate_chat(messages))
+    await chat.chat(data)
         
 
 client.run(TOKEN)

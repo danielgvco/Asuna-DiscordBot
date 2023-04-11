@@ -1,0 +1,29 @@
+{
+    "prefix": "!",
+
+    "moderation": {
+        "active": "True",
+
+        "admin-bypass-moderation": "True",
+        "moderation-log": "True",
+        "moderation-log-channel": "moderation-log",
+
+        "anti-hate": "True",
+        "anti-spam": "True",
+        "anti-scam": "True"
+    },
+
+    "chat": {
+        "active": "True",
+
+        "admin-chat": "True",
+        "admin-chat-max-length": "15",
+        "admin-chat-max-token": "2500",
+        "admin-chat-max-tokens-output": "250",
+
+        "users-chat": "True",
+        "users-chat-max-length": "6",
+        "users-chat-max-token": "600",
+        "users-chat-max-tokens-output": "150"
+    }
+}

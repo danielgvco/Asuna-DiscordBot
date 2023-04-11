@@ -50,9 +50,7 @@ def high_moderation(message):
     answer = response.choices[0].text.strip().lower()
     clean_answer = answer.replace(".", "")
     
-    if clean_answer == "yes":
-        return True
-    elif clean_answer == "no":
-        return False
-    else:
-        return None
+    final_answer = helper.true_or_false(clean_answer)
+    print(final_answer)
+    print(type(final_answer))
+    return final_answer

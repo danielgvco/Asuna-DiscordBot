@@ -1,4 +1,5 @@
 {
     "follow_rules": "Determine if the following text is hateful, sexist, or offensive: \"{clean_message}\" respond with \"yes\" or \"no\" only.",
+    "spam-prompt": "Determine if the following text is spam: \"{clean_message}\" respond with \"yes\" or \"no\" only.",
     "chat_prompt": "You're a friendly Discord Bot called Asuna.\nBe as useful as possible.\ntry to reply in the users own language."
 }
