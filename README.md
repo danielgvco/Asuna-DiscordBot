@@ -30,11 +30,11 @@ cd Asuna-DiscordBot
 
 2. **Install dependencies**
 
-\```bash
+```bash
 pip3 install openai
 pip3 install discord.py
 pip3 install python-dotenv
-\```
+```
 
 3. **Configure environment variables**
 
@@ -43,15 +43,15 @@ Copy the `.env.example` file to a new file named `.env` and fill in the necessar
 - OpenAI API Key
 - SSL CERT PATH only if neccesary
 
-\```bash
+```bash
 cp .env.example .env
-\```
+```
 
 4. **Start the bot**
 
-\```bash
+```bash
 python3 main.py
-\```
+```
 
 Asuna should now be running on your Discord server.
 
