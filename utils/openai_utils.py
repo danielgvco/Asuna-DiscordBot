@@ -51,6 +51,4 @@ def high_moderation(message):
     clean_answer = answer.replace(".", "")
     
     final_answer = helper.true_or_false(clean_answer)
-    print(final_answer)
-    print(type(final_answer))
     return final_answer

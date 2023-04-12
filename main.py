@@ -25,7 +25,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     
-    print(f"{message.channel}: {message.author}: {message.content}")
+    print(f"{message.author}: {message.channel}: {message.content}")
     
     data = {
         "message": message,

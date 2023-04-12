@@ -12,5 +12,7 @@ async def chat(data, limit=6):
     client = data["client"]
     history = await helper.get_channel_history(data, limit)
     formatted_history = helper.format_chat_dictionary_list(history, client)
+
+    print(helper.num_tokens_from_messages(formatted_history))
     
     await message.reply(openai_utils.generate_chat(formatted_history))
